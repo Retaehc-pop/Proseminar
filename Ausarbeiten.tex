@@ -6,7 +6,7 @@
 % Path relative to the .tex file containing the \includegraphics command
 \graphicspath{ {./images/} }
 
-\title{Promsie Javascript\\
+\title{Promsie\\
 {\footnotesize RWTH Aachen University}}
 
 \author{
@@ -21,31 +21,45 @@
 
 \begin{document}
 \maketitle
+
 \begin{abstract}
-  \lipsum[1]
+  In Javascript there are two ways to handle asynchronous code. The first way is to use callbacks. The second way is to use promises. This paper will explain the concept of promises and how to use them. The paper will also compare the two ways to handle asynchronous code.
 \end{abstract}
-\section{Promises}
-\lipsum[2]
-\subsection{then}
-\lipsum[3]
-\subsection{catch}
-\lipsum[4]
-\section{Asynchronous methods}
-\lipsum[4-6]
-\subsection{async}
-\lipsum[3]
-\subsection{await}
-\lipsum[4]
-\begin{figure}
+
+\section{eventloop}
+In Javascript, a single threaded programming language, It is possible to handle thousands of operation symaltaniously by 
+using eventloop. Eventloop is created to fix the single threaded problem that program can only run one function at a time. 
+In practice, the program will be unusable without event loop. 
+\begin{figure}[h]
   \centering
-  \includegraphics[scale=0.1]{test}
-  \caption{this is a test picture}
-  \label{fig:test}
+  \includegraphics[scale=0.5]{eventloop}
+  \caption{eventloop}
+  \label{fig:eventloop}
 \end{figure}
 
-reference to the picture use figure \ref{fig:test} on page \pageref{fig:test}
-\section{Callbacks}
-\lipsum[4-6]
+in figure \ref{fig:eventloop} the eventloop will constantly check the task queue. 
+If there is a task in the task queue, the first task in the queue will be removed and put into the call stack.
+The eventloop will then take a detour to the call stack and execute the task that was in the callstack.
+After a certain amount of time has passed the event loop will then go through the render step which contain styles generation,
+layout positioning , and pixel data generation that will be displayed on the browser.
+\section{callbacks}
+
+\section{Promises}
+Promise is a object use to represent a task that will eventually be either be pending, fullfilled or rejected which will be handle by $then$ or $catch$ method function.
+
+\subsection{then}
+\subsection{catch}
+\section{Asynchronous methods}
+\subsection{async}
+\subsection{await}
+% \begin{figure}
+%   \centering
+%   \includegraphics[scale=0.1]{test}
+%   \caption{this is a test picture}
+%   \label{fig:test}
+% \end{figure}
+
+% reference to the picture use figure \ref{fig:test} on page \pageref{fig:test}
 \section{Conclusion}
 \lipsum[4-6]
 \begin{thebibliography}{9}
