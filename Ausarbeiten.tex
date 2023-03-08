@@ -3,6 +3,7 @@
 \usepackage[english]{babel}
 \usepackage{graphicx}
 \usepackage{lipsum}
+\usepackage{listings}[language=Javascript]
 % Path relative to the .tex file containing the \includegraphics command
 \graphicspath{ {./images/} }
 
@@ -45,23 +46,47 @@ layout positioning , and pixel data generation that will be displayed on the bro
 \section{callbacks}
 
 \section{Promises}
-Promise is a object use to represent a task that will eventually be either be pending, fullfilled or rejected which will be handle by $then$ or $catch$ method function.
+Promise is a object use to represent a task that will eventually be either be fullfilled or rejected. 
+if the Task is fullfilled, then the promise will be resolved. If the task is rejected, then the promise will be rejected.
+\begin{lstlisting}
+  const promise = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+      resolve('done');
+    },1000);
+  });
+\end{lstlisting}
+\subsection{Callback Handling} 
+Promise will eventually either be fullfilled or rejected. 
 
-\subsection{then}
-\subsection{catch}
+\subsubsection{then()}
+then can be use to handle the fullfilled promise.
+\begin{lstlisting}
+  promise.then()
+\end{lstlisting}
+
+\subsubsection{catch()}
+catch can be use to handle the rejected promise.
+\begin{lstlisting}
+  promise.catch()
+\end{lstlisting}
+
+\subsection{Chaining}
+Promise can be chained together to handle multiple asynchronous funtion. often use when fetching data from HTTP server and convert to json.
+\begin{lstlisting}
+  promise.then().then().catch()
+\end{lstlisting}
+\subsection{Catching Errors}
+\subsection{fetch API}
+fetch API is a promise based API that can be use to make HTTP request. 
+\begin{lstlisting}
+  const res = fetch('...');
+\end{lstlisting}
+
 \section{Asynchronous methods}
 \subsection{async}
 \subsection{await}
-% \begin{figure}
-%   \centering
-%   \includegraphics[scale=0.1]{test}
-%   \caption{this is a test picture}
-%   \label{fig:test}
-% \end{figure}
 
-% reference to the picture use figure \ref{fig:test} on page \pageref{fig:test}
 \section{Conclusion}
-\lipsum[4-6]
 \begin{thebibliography}{9}
   \bibitem{article} Author,Title \emph{Bookname}, Band and publication number,Page,Year.
   \bibitem{conferences} Author, TItle \emph{Conference Name}, Page, Year

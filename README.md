@@ -5,13 +5,16 @@
   - [ ] Abstract
   - [ ] Introduction
   - [ ] Event Loop
+  
   - [ ] Callbacks
   - [ ] Promises
     - [ ] Callback Handling (then/catch)
     - [ ] Promise Chaining
     - [ ] Catching Errors
     - [ ] Promise fetch API
-  - [ ] Async/Await
+  - [ ] Asyncronous Programming
+    - [ ] Async
+    - [ ] Await
   - [ ] Conclusion
   - [ ] References
 - [ ] Presentation
